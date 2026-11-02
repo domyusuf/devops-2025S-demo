@@ -5,3 +5,11 @@ __pycache__/
 db.sqlite3
 .env
 terraform/
+
+# Keep local infrastructure state and keys out of images
+preclass/
+.terraform/
+*.tfstate*
+*.tfvars
+*.pem
+*.key
