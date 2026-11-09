@@ -36,6 +36,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build image
         run: docker build -t campus-notifier:dev .
+      - name: Check Django with runtime configuration
+        run: |
+          docker run --rm -e DJANGO_SECRET_KEY="$(python3 -c 'import secrets; print(secrets.token_hex(32))')" campus-notifier:dev python manage.py check
       - name: Trivy severity table
         run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:0.70.0 image --scanners vuln --severity HIGH,CRITICAL --format table --exit-code 0 campus-notifier:dev
       - name: Trivy findings
