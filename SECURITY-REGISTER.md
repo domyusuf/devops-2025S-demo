@@ -100,3 +100,11 @@ This acceptance does not authorize using the image for sensitive production data
 | CVE-2026-25673 | Django | 5.2.7 | HIGH | 6.0.3, 5.2.12, 4.2.29 | Remediate by upgrading to Django 5.2.17. |
 | CVE-2026-33034 | Django | 5.2.7 | HIGH | 6.0.4, 5.2.13, 4.2.30 | Remediate by upgrading to Django 5.2.17. |
 | CVE-2026-3902 | Django | 5.2.7 | HIGH | 6.0.4, 5.2.13, 4.2.30 | Remediate by upgrading to Django 5.2.17. |
+
+## Verified remediation result
+
+The image report after the Django and zlib updates contains **47 HIGH and 0
+CRITICAL** findings. All 47 remaining rows have no published fix in Trivy's report.
+The eight Django findings and two zlib findings listed above are resolved.
+The severity counts describe the scanned image at this date, not a permanent
+guarantee. The workflow uploads the full machine-readable report on each run.
