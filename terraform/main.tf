@@ -11,6 +11,10 @@ resource "aws_ecr_repository" "devops_repo" {
     scan_on_push = true
   }
 
+  encryption_configuration {
+    encryption_type = "KMS"
+  }
+
   # Tags are good practice for organization
   tags = {
     Environment = "Testing"
