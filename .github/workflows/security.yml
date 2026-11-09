@@ -45,6 +45,9 @@ jobs:
           name: trivy-findings
           path: trivy-results.json
 
+      - name: Block fixable CRITICAL vulnerabilities
+        run: docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:0.70.0 image --scanners vuln --severity CRITICAL --ignore-unfixed --exit-code 1 campus-notifier:dev
+
   iac:
     name: IaC scan
     runs-on: ubuntu-latest
